@@ -36,6 +36,7 @@
     "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.27",
+    "daisyui": "^5.5.19",
     "electron": "40.6.1",
     "electron-forge": "^5.2.4",
     "eslint": "^8.57.1",
