@@ -1,0 +1,123 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Eye glow -->
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0066ff" stop-opacity="0.4"/>
+    </radialGradient>
+
+    <!-- Body gradient -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+
+    <!-- Head gradient -->
+    <linearGradient id="headGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong glow for eyes -->
+    <filter id="eyeFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Antenna base -->
+  <rect x="145" y="42" width="10" height="28" rx="5" fill="#2a2a2a" stroke="#404040" stroke-width="1.5"/>
+
+  <!-- Antenna tip glow -->
+  <circle cx="150" cy="38" r="8" fill="url(#eyeGlow)" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="38" r="4" fill="#00f0ff"/>
+
+  <!-- Head -->
+  <rect x="85" y="68" width="130" height="100" rx="14" fill="url(#headGrad)" stroke="#404040" stroke-width="2"/>
+
+  <!-- Head shine line -->
+  <line x1="95" y1="74" x2="205" y2="74" stroke="#64b5f6" stroke-width="1" opacity="0.25"/>
+
+  <!-- Left Eye -->
+  <rect x="103" y="95" width="38" height="28" rx="6" fill="#0a0a0a" stroke="#404040" stroke-width="1.5"/>
+  <rect x="107" y="99" width="30" height="20" rx="4" fill="url(#eyeGlow)" filter="url(#eyeFilter)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Left eye pupil -->
+  <circle cx="122" cy="109" r="5" fill="#00f0ff" filter="url(#glow)"/>
+
+  <!-- Right Eye -->
+  <rect x="159" y="95" width="38" height="28" rx="6" fill="#0a0a0a" stroke="#404040" stroke-width="1.5"/>
+  <rect x="163" y="99" width="30" height="20" rx="4" fill="url(#eyeGlow)" filter="url(#eyeFilter)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Right eye pupil -->
+  <circle cx="178" cy="109" r="5" fill="#00f0ff" filter="url(#glow)"/>
+
+  <!-- Mouth / speaker grille -->
+  <rect x="108" y="140" width="84" height="16" rx="8" fill="#0a0a0a" stroke="#404040" stroke-width="1.5"/>
+  <line x1="118" y1="148" x2="126" y2="148" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <line x1="132" y1="148" x2="148" y2="148" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.7">
+    <animate attributeName="x2" values="148;138;148" dur="1.2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="154" y1="148" x2="162" y2="148" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <line x1="168" y1="148" x2="182" y2="148" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Neck -->
+  <rect x="135" y="168" width="30" height="16" rx="4" fill="#2a2a2a" stroke="#404040" stroke-width="1.5"/>
+
+  <!-- Body -->
+  <rect x="75" y="184" width="150" height="90" rx="14" fill="url(#bodyGrad)" stroke="#404040" stroke-width="2"/>
+
+  <!-- Body chest panel -->
+  <rect x="95" y="198" width="110" height="58" rx="8" fill="#0f0f0f" stroke="#404040" stroke-width="1.5"/>
+
+  <!-- Chest arc reactor -->
+  <circle cx="150" cy="220" r="18" fill="#0a0a0a" stroke="#404040" stroke-width="1.5"/>
+  <circle cx="150" cy="220" r="12" fill="url(#eyeGlow)" filter="url(#glow)" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="220" r="5" fill="#00f0ff" filter="url(#glow)"/>
+
+  <!-- Chest panel side indicators -->
+  <rect x="100" y="242" width="20" height="6" rx="3" fill="#64b5f6" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="126" y="242" width="14" height="6" rx="3" fill="#8a2be2" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="146" y="242" width="14" height="6" rx="3" fill="#64b5f6" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="166" y="242" width="20" height="6" rx="3" fill="#8a2be2" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Left Arm -->
+  <rect x="42" y="184" width="28" height="80" rx="12" fill="url(#bodyGrad)" stroke="#404040" stroke-width="2"/>
+  <rect x="48" y="220" width="16" height="8" rx="4" fill="#00f0ff" opacity="0.4"/>
+
+  <!-- Right Arm -->
+  <rect x="230" y="184" width="28" height="80" rx="12" fill="url(#bodyGrad)" stroke="#404040" stroke-width="2"/>
+  <rect x="236" y="220" width="16" height="8" rx="4" fill="#00f0ff" opacity="0.4"/>
+
+  <!-- Ear / side panels -->
+  <rect x="75" y="88" width="12" height="40" rx="6" fill="#2a2a2a" stroke="#404040" stroke-width="1.5"/>
+  <rect x="213" y="88" width="12" height="40" rx="6" fill="#2a2a2a" stroke="#404040" stroke-width="1.5"/>
+
+</svg>

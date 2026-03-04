@@ -1,8 +1,54 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+:root {
+  /* Carbon Fiber Theme */
+  --cf-darkest: #0f0f0f;
+  --cf-dark: #1a1a1a;
+  --cf-medium: #2a2a2a;
+  --cf-light: #3a3a3a;
+  --cf-silver: #d0d0d0;
+  --cf-accent: #64b5f6;
+  --cf-border: #404040;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
+  background-color: var(--cf-dark);
+  color: var(--cf-silver);
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cf-medium);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cf-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cf-silver);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--cf-accent);
+  color: var(--cf-darkest);
 }
